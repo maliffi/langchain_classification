@@ -94,15 +94,35 @@ ollama serve  # Start the Ollama server
 
 ### Running the Application
 
+To run the application, use the following command:
+
 ```bash
 python -m src.main
 ```
+
 
 The application will:
 1. Load the specified LLM via Ollama
 2. Process an example text
 3. Classify the text based on sentiment, aggressiveness, and language
 4. Log the results
+
+#### Example Output
+Here's an example of the output you should see:
+
+```
+2025-03-28 12:03:58 | INFO     | __main__:main:22 - Application started in development mode
+2025-03-28 12:03:59 | INFO     | __main__:main:42 - Input to classify: Sono incredibilmente contento di averti conosciuto! Sono sicuro diventeremo buoni amici!
+2025-03-28 12:03:59 | INFO     | __main__:main:43 - Response: Sentiment: positive, Aggressiveness: 1, Language: Italian
+```
+
+In this example, the Italian text "Sono incredibilmente contento di averti conosciuto! Sono sicuro diventeremo buoni amici!" (which means "I'm incredibly happy to have met you! I'm sure we'll become good friends!") is classified as:
+
+- **Sentiment**: positive
+- **Aggressiveness**: 1 (very low)
+- **Language**: Italian
+
+You can modify the input text in `src/main.py` to test different classifications.
 
 ## Development
 
